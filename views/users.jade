@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= "Look at all the users:"
+    .userlist
+        each User in users
+            .userdiv
+                h2= User.firstname + " " + User.lastname
+                p= User.email
+                p= User.username

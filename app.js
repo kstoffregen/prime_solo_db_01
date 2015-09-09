@@ -5,6 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var register = require('./routes/register');
+
 var passport = require('passport');
 var session = require('express-session');
 var localStrategy = require('passport-local').Strategy;
@@ -13,10 +17,6 @@ var mongoose = require('mongoose');
 var mongoURI = "mongodb://localhost:27017/solo_db_passport";
 var mongoDB = mongoose.connect(mongoURI).connection;
 var User = require('./models/user');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var register = require('./routes/register');
 
 var app = express();
 

@@ -10,11 +10,11 @@ router.get('/', function(req, res, next){
 
 router.post('/', function(req, res, next){
     Users.create(req.body, function (err, post) {
-        if (err)
+        if (err) {
             next(err);
-        else
-            res.redirect('/users');
-    })
+        }else {
+            res.redirect('/');
+        }})
 });
 
 module.exports = router;
